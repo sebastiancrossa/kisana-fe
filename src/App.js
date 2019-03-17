@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components'
-import Header from './layout/Header'
+
+// Component Imports
+import Header from './layout/Header';
+import PersonalTasks from './components/PersonalTasks';
 
 class App extends Component {
   render() {
@@ -9,6 +11,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header branding="Kisana" />
+          <PersonalTasks />
         </div>
       </Router>
     );
