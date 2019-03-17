@@ -72,11 +72,12 @@ class PersonalTasks extends Component {
     state = {
         task1: 'Finish Kisana UI',
         task2: 'Validate product',
-        task3: 'Start working on YC app'
+        task3: 'Start working on YC app',
+        streak: '7'
     }
 
     render() {
-        const { task1, task2, task3 } = this.state;
+        const { task1, task2, task3, streak } = this.state;
 
         return (
             <div>
@@ -96,7 +97,7 @@ class PersonalTasks extends Component {
                             </TextRight>
 
                             <TextLeft>
-                                <Streak>🔥7</Streak>
+                                <Streak>🔥{streak}</Streak>
                             </TextLeft>
                         </TaskDisplay>
                     </Container>
