@@ -18,6 +18,24 @@ const Title = styled.h2`
     color: #222B3E;
 `;
 
+const AddTask = styled.button`
+    width: 150px;
+    height: 45px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #42EA9D;
+
+    box-shadow: 0px 0px 10px #42EA9D;
+    font-family: 'Open Sans', Arial;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+
+    justify-self: end;
+    align-self: center;
+`;
+
 const TaskDisplay = styled.div`
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -41,6 +59,11 @@ const Header = styled.h2`
     font-family: 'Open Sans', Arial;
     font-weight: 600;
     color: #222B3E;
+`;
+
+const HeaderLayout = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 `;
 
 const TaskList = styled.ul`
@@ -83,7 +106,12 @@ class PersonalTasks extends Component {
             <div>
                 <PersonalTaskSection>
                     <Container>
-                        <Title>Your tasks</Title>
+
+                        <HeaderLayout>
+                            <Title>Your tasks</Title>
+                            <AddTask>Add new</AddTask>
+                        </HeaderLayout>
+
 
                         <TaskDisplay>
                             <TextRight>
