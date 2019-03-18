@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const LeaderboardItemCell = styled.div`
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: #FFF;
     border-radius: 8px;
-    height: 70px;
+    height: 77px;
 `;
 
 const LeaderboardItems = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
 
-    padding-top: 7px;
+    padding-top: 13px;
 
     font-family: 'Open Sans', Arial;
     font-weight: 800;
