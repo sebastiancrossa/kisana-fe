@@ -6,10 +6,15 @@ import styled from 'styled-components';
 import Header from './layout/Header';
 import PersonalTasks from './components/PersonalTasks';
 import Leaderboard from './components/Leaderboard';
+import Feed from './layout/Feed';
 
 const TopLayout = styled.div`
   display: grid;
   grid-template-columns: repeat(2, auto);
+`;
+
+const BottomLayout = styled.div`
+  
 `;
 
 const Container = styled.div`
@@ -27,10 +32,16 @@ class App extends Component {
           <Header branding="Kisana" />
 
           <Container>
+
             <TopLayout>
               <PersonalTasks />
               <Leaderboard />
             </TopLayout>
+
+            <BottomLayout>
+              <Feed />
+            </BottomLayout>
+
           </Container>
 
         </div>
