@@ -31,6 +31,7 @@ const AddTask = styled.button`
     font-weight: 600;
     font-size: 16px;
     color: white;
+    cursor: pointer;
 
     justify-self: end;
     align-self: center;

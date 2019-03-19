@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Feed from '../layout/Feed';
 
 const Cell = styled.div`
     background-color: #FFF;
@@ -51,13 +51,8 @@ const FeedText = styled.p`
 `;
 
 export class FeedItem extends Component {
-    state = {
-        name: 'Sebastian Crossa',
-        streak: '7'
-    }
-
     render() {
-        const { name, streak } = this.state;
+        const { name, streak, tasks } = this.props;
 
         return (
             <Cell>
@@ -71,15 +66,21 @@ export class FeedItem extends Component {
                         <Title>What I'm working on today</Title>
 
                         <List>
-                            <li>Competitive programming</li>
-                            <li>Videogame dev</li>
-                            <li>School work</li>
+                            {tasks.map(task => (
+                                <li>{task.title}</li>
+                            ))}
                         </List>
                     </LayoutRight>
                 </Layout>
             </Cell>
         )
     }
+}
+
+FeedItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    streak: PropTypes.string.isRequired,
+    tasks: PropTypes.array.isRequired
 }
 
 export default FeedItem;
