@@ -119,9 +119,17 @@ class PersonalTasks extends Component {
                                 <Header> What I'm working on today </Header>
 
                                 <TaskList>
-                                    <TaskListItem>{task1}</TaskListItem>
-                                    <TaskListItem>{task2}</TaskListItem>
-                                    <TaskListItem>{task3}</TaskListItem>
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task1}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task2}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task3}
+                                    </TaskListItem>
                                 </TaskList>
                             </TextRight>
 
