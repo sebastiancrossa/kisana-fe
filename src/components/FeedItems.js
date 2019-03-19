@@ -1,35 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import FeedItem from './FeedItem';
+import PropTypes from 'prop-types';
 
-// Component imports
-import FeedItem from '../components/FeedItem';
-
-const FeedView = styled.div`
-
-`;
-
-const Container = styled.div`
-    width: 95.5%;
-    margin: 0 auto;
-    max-width: 1100px;
-`;
-
-const Title = styled.h2`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
-    color: #222B3E;
-`;
-
-const FeedItems = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 30px;
-    grid-row-gap: 30px;
-`;
-
-class Feed extends Component {
+class FeedItems extends Component {
     constructor() {
-        super();
+        super(this);
 
         this.state = {
             feed: [
@@ -41,7 +16,7 @@ class Feed extends Component {
                             completed: false
                         },
                         {
-                            title: 'Work on Kisana backend',
+                            title: 'Competitive programming',
                             completed: false
                         },
                         {
@@ -131,24 +106,21 @@ class Feed extends Component {
         const { feed } = this.state;
 
         return (
-            <FeedView>
-                <Container>
-                    <Title>Feed</Title>
-
-                    <FeedItems>
-                        {feed.map(user => (
-                            <FeedItem
-                                name={user.name}
-                                tasks={user.tasks}
-                                streak={user.streak}
-                            />
-                        ))}
-                    </FeedItems>
-                </Container>
-            </FeedView>
-        )
+            <div>
+                {feed.map(user => (
+                    <FeedItem
+                        name={feed.name}
+                        tasks={feed.tasks}
+                        streak={feed.streak}
+                    />
+                ))}
+            </div>
+        );
     }
 }
 
+FeedItems.propTypes = {
+    feed: PropTypes.array.isRequired
+}
 
-export default Feed;
+export default FeedItems;
