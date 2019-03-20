@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 // Component imports
 import FeedItem from '../components/FeedItem';
@@ -28,6 +29,7 @@ const FeedItems = styled.div`
 `;
 
 class Feed extends Component {
+
     constructor() {
         super();
 
@@ -125,6 +127,30 @@ class Feed extends Component {
                 }
             ]
         };
+    }
+
+    componentDidMount() {
+        // Fetch users from API
+        axios
+            .get("http://localhost:3300/users")
+            .then(response => {
+
+                // Se crea un array de usuarios
+                const newFeed = response.data.map(c => {
+                    return {
+                        name: c.name,
+                        streak: c.streak,
+                        tasks: c.tasks
+                    };
+                });
+
+                const newState = Object.assign({}, this.state, {
+                    feed: newFeed
+                });
+
+                this.setState(newState);
+
+            }).catch(err => console.log(err));
     }
 
     render() {

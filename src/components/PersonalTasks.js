@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// Component Imports
+import Modal from './Modal';
+
 const PersonalTaskSection = styled.div`
     margin-top: 20px;
 `;
@@ -59,6 +62,7 @@ const TextLeft = styled.div`
 const Header = styled.h2`
     font-family: 'Open Sans', Arial;
     font-weight: 600;
+    font-size: 20px;
     color: #222B3E;
 `;
 
@@ -73,7 +77,7 @@ const TaskList = styled.ul`
     margin-top: -5px;
     font-family: 'Open Sans', Arial;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
     color: #222B3E;
 `;
 
@@ -92,12 +96,58 @@ const Streak = styled.h1`
     width: 50px;
 `;
 
+const ModalText = styled.div`
+    font-family: 'Open Sans', Arial;
+    font-weight: 600;
+    font-size: 20px;
+    color: #222B3E; 
+
+    justify-self: center;
+
+    margin: 0 auto;
+`;
+
+const ModalTitle = styled.p`
+    text-align: center;
+`;
+
+const ModalInput = styled.input`
+    font-family: 'Open Sans', Arial;
+    font-weight: 400;
+    font-size: 16px;
+    color: #222B3E; 
+
+    border: 0.5px solid #F4F5FA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    
+    display: block;
+    margin: 0 auto;
+
+    width: 80%;
+
+    
+    &::placeholder {
+        color: #C0C3D2;
+        font-size: 16px;
+    }
+`;
+
 class PersonalTasks extends Component {
     state = {
+        show: false,
         task1: 'Finish Kisana UI',
         task2: 'Validate product',
         task3: 'Start working on YC app',
         streak: '7'
+    }
+
+    showModal = () => {
+        this.setState({ show: true });
+    }
+
+    hideModal = () => {
+        this.setState({ show: false });
     }
 
     render() {
@@ -110,7 +160,15 @@ class PersonalTasks extends Component {
 
                         <HeaderLayout>
                             <Title>Your tasks</Title>
-                            <AddTask>Add new</AddTask>
+
+                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                                <ModalText>
+                                    <ModalTitle>Add new task</ModalTitle>
+                                    <ModalInput type="text" placeholder="Task..." />
+                                </ModalText>
+                            </Modal>
+
+                            <AddTask type='button' onClick={this.showModal}>Add new</AddTask>
                         </HeaderLayout>
 
 
