@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// Component Imports
+import Modal from './Modal';
+
 const PersonalTaskSection = styled.div`
     margin-top: 20px;
 `;
@@ -59,6 +62,7 @@ const TextLeft = styled.div`
 const Header = styled.h2`
     font-family: 'Open Sans', Arial;
     font-weight: 600;
+    font-size: 20px;
     color: #222B3E;
 `;
 
@@ -70,15 +74,20 @@ const HeaderLayout = styled.div`
 const TaskList = styled.ul`
     list-style: none;
 
-    margin-top: -5px;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+
     font-family: 'Open Sans', Arial;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
     color: #222B3E;
+
+    padding-left: 0px;
 `;
 
 const TaskListItem = styled.li`
-    margin: 10px 0;
+    margin-bottom: 10px;
 `;
 
 const Streak = styled.h1`
@@ -88,20 +97,69 @@ const Streak = styled.h1`
     color: #222B3E;
 
     display: block;
-    margin: 50px auto;
+    margin: 50px 0 50px 35px;
     width: 50px;
+`;
+
+const ModalText = styled.div`
+    font-family: 'Open Sans', Arial;
+    font-weight: 600;
+    font-size: 20px;
+    color: #222B3E; 
+
+    justify-self: center;
+
+    margin: 0 auto;
+`;
+
+const ModalTitle = styled.p`
+    text-align: center;
+`;
+
+const ModalInput = styled.input`
+    font-family: 'Open Sans', Arial;
+    font-weight: 400;
+    font-size: 16px;
+    color: #222B3E; 
+
+    border: 0.5px solid #F4F5FA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    
+    display: block;
+    margin: 0 auto;
+
+    width: 80%;
+
+    
+    &::placeholder {
+        color: #C0C3D2;
+        font-size: 16px;
+    }
 `;
 
 class PersonalTasks extends Component {
     state = {
+        show: false,
         task1: 'Finish Kisana UI',
         task2: 'Validate product',
         task3: 'Start working on YC app',
+        task4: 'Finish Kisana UI',
+        task5: 'Validate product',
+        task6: 'Start working on YC app',
         streak: '7'
     }
 
+    showModal = () => {
+        this.setState({ show: true });
+    }
+
+    hideModal = () => {
+        this.setState({ show: false });
+    }
+
     render() {
-        const { task1, task2, task3, streak } = this.state;
+        const { task1, task2, task3, task4, task5, task6, streak } = this.state;
 
         return (
             <div>
@@ -110,7 +168,15 @@ class PersonalTasks extends Component {
 
                         <HeaderLayout>
                             <Title>Your tasks</Title>
-                            <AddTask>Add new</AddTask>
+
+                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                                <ModalText>
+                                    <ModalTitle>Add new task</ModalTitle>
+                                    <ModalInput type="text" placeholder="Task..." />
+                                </ModalText>
+                            </Modal>
+
+                            <AddTask type='button' onClick={this.showModal}>Add new</AddTask>
                         </HeaderLayout>
 
 
@@ -129,6 +195,18 @@ class PersonalTasks extends Component {
 
                                     <TaskListItem>
                                         <input type="checkbox" /> {task3}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task4}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task5}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task6}
                                     </TaskListItem>
                                 </TaskList>
                             </TextRight>
