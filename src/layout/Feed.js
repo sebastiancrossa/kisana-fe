@@ -10,7 +10,7 @@ const FeedView = styled.div`
 `;
 
 const Container = styled.div`
-    width: 95.5%;
+    width: 94%;
     margin: 0 auto;
     max-width: 1100px;
 `;
@@ -40,7 +40,7 @@ class Feed extends Component {
                     tasks: [
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Work on Kisana backend',

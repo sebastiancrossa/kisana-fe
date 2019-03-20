@@ -20,6 +20,8 @@ const Container = styled.div`
     position: relative;
 
     display: flex;
+    justify-content: space-between;
+
     align-items: center;
     width: 90%;
     max-width: 1100px;
@@ -29,6 +31,9 @@ const Container = styled.div`
 
 const NavbarUl = styled.ul`
     display: flex;
+    padding-left: 0px;
+    margin-top: 18px;
+    margin-right: 0px;
 `;
 
 const NavBarUlLi = styled(Link)`
@@ -50,7 +55,7 @@ const Header = (props) => {
                 <Title to="/">{branding}</Title>
                 <div>
                     <NavbarUl>
-                        <NavBarUlLi to="/">IMAGE</NavBarUlLi>
+                        <NavBarUlLi to="/">[]</NavBarUlLi>
                         <NavBarUlLi to="/">Sebastian Crossa</NavBarUlLi>
                     </NavbarUl>
                 </div>

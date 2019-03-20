@@ -14,12 +14,12 @@ const Layout = styled.div`
     display: grid;
     grid-template-columns: repeat(2, auto);
 
-    padding-top: 30px;
+    padding-top: 15px;
 `;
 
 const LayoutLeft = styled.div`
     align-items: center;
-    padding-top: 15px;
+    padding: 15px 8px 0px 10px;
 `;
 
 const LayoutRight = styled.div`
@@ -51,8 +51,22 @@ const FeedText = styled.p`
 `;
 
 export class FeedItem extends Component {
+    getStyle = () => {
+        return {
+            textDecoration: 'line-through'
+        }
+    }
+
     render() {
-        const { name, streak, tasks } = this.props;
+        const { name, streak, tasks, completed } = this.props;
+
+        const itemLineThrough = {
+            textDecoration: 'line-through'
+        };
+
+        const itemLineThroughNone = {
+            textDecoration: 'none'
+        };
 
         return (
             <Cell>
@@ -67,12 +81,12 @@ export class FeedItem extends Component {
 
                         <List>
                             {tasks.map(task => (
-                                <li>{task.title}</li>
+                                <li style={task.completed ? itemLineThrough : itemLineThroughNone}>{task.title}</li>
                             ))}
                         </List>
                     </LayoutRight>
                 </Layout>
-            </Cell>
+            </Cell >
         )
     }
 }

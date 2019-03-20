@@ -74,15 +74,20 @@ const HeaderLayout = styled.div`
 const TaskList = styled.ul`
     list-style: none;
 
-    margin-top: -5px;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+
     font-family: 'Open Sans', Arial;
     font-weight: 600;
     font-size: 15px;
     color: #222B3E;
+
+    padding-left: 0px;
 `;
 
 const TaskListItem = styled.li`
-    margin: 10px 0;
+    margin-bottom: 10px;
 `;
 
 const Streak = styled.h1`
@@ -92,7 +97,7 @@ const Streak = styled.h1`
     color: #222B3E;
 
     display: block;
-    margin: 50px auto;
+    margin: 50px 0 50px 35px;
     width: 50px;
 `;
 
@@ -139,6 +144,9 @@ class PersonalTasks extends Component {
         task1: 'Finish Kisana UI',
         task2: 'Validate product',
         task3: 'Start working on YC app',
+        task4: 'Finish Kisana UI',
+        task5: 'Validate product',
+        task6: 'Start working on YC app',
         streak: '7'
     }
 
@@ -151,7 +159,7 @@ class PersonalTasks extends Component {
     }
 
     render() {
-        const { task1, task2, task3, streak } = this.state;
+        const { task1, task2, task3, task4, task5, task6, streak } = this.state;
 
         return (
             <div>
@@ -187,6 +195,18 @@ class PersonalTasks extends Component {
 
                                     <TaskListItem>
                                         <input type="checkbox" /> {task3}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task4}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task5}
+                                    </TaskListItem>
+
+                                    <TaskListItem>
+                                        <input type="checkbox" /> {task6}
                                     </TaskListItem>
                                 </TaskList>
                             </TextRight>
