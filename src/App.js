@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 
 // Component Imports
@@ -7,6 +8,8 @@ import Header from './layout/Header';
 import PersonalTasks from './components/PersonalTasks';
 import Leaderboard from './components/Leaderboard';
 import Feed from './layout/Feed';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
 
 const TopLayout = styled.div`
   display: grid;
@@ -25,6 +28,26 @@ const Container = styled.div`
 `;
 
 class App extends Component {
+  state = {
+    users: []
+  }
+
+  componentDidMount() {
+    axios.post("http://localhost:3300/user", {
+      name: 'Sebastian Crossa',
+      email: 'crossasebastian@gmail.com',
+      tasks: [
+        {
+          title: 'Connect backend',
+          created: '',
+          done: true
+        }
+      ],
+      follows: []
+    }).then(response => this.setState({
+      users: [...this.state.users, response.data]
+    }));
+  }
 
   render() {
     return (

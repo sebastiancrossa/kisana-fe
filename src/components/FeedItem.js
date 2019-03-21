@@ -51,21 +51,17 @@ const FeedText = styled.p`
 `;
 
 export class FeedItem extends Component {
-    getStyle = () => {
-        return {
-            textDecoration: 'line-through'
-        }
-    }
-
     render() {
         const { name, streak, tasks, completed } = this.props;
 
         const itemLineThrough = {
-            textDecoration: 'line-through'
+            textDecoration: 'line-through',
+            color: '#C0C3D2'
         };
 
         const itemLineThroughNone = {
-            textDecoration: 'none'
+            textDecoration: 'none',
+            color: '#222B3E'
         };
 
         return (
