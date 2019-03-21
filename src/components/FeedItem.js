@@ -52,7 +52,7 @@ const FeedText = styled.p`
 
 export class FeedItem extends Component {
     render() {
-        const { name, streak, tasks, completed } = this.props;
+        const { name, streak, tasks, done } = this.props;
 
         const itemLineThrough = {
             textDecoration: 'line-through',
@@ -77,7 +77,7 @@ export class FeedItem extends Component {
 
                         <List>
                             {tasks.map(task => (
-                                <li style={task.completed ? itemLineThrough : itemLineThroughNone}>{task.title}</li>
+                                <li style={task.done ? itemLineThrough : itemLineThroughNone}>{task.title}</li>
                             ))}
                         </List>
                     </LayoutRight>
