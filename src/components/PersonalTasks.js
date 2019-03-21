@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 // Component Imports
 import Modal from './Modal';
@@ -27,9 +28,9 @@ const AddTask = styled.button`
 
     border: none;
     border-radius: 5px;
-    background-color: #42EA9D;
+    background-color: #00D77B;
 
-    box-shadow: 0px 0px 10px #42EA9D;
+    box-shadow: 0px 0px 10px #00D77B;
     font-family: 'Open Sans', Arial;
     font-weight: 600;
     font-size: 16px;
@@ -47,7 +48,7 @@ const TaskDisplay = styled.div`
     background-color: white;
     border-radius: 8px;
     max-width: 800px;
-    height: 250px;
+    height: 280px;
 `;
 
 const TextRight = styled.div`
@@ -149,6 +150,8 @@ class PersonalTasks extends Component {
         task6: 'Start working on YC app',
         streak: '7'
     }
+
+
 
     showModal = () => {
         this.setState({ show: true });

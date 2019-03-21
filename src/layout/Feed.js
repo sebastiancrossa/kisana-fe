@@ -29,7 +29,6 @@ const FeedItems = styled.div`
 `;
 
 class Feed extends Component {
-
     constructor() {
         super();
 
@@ -138,7 +137,7 @@ class Feed extends Component {
                 // Se crea un array de usuarios
                 const newFeed = response.data.map(c => {
                     return {
-                        name: c.name,
+                        name: c.first_name,
                         streak: c.streak,
                         tasks: c.tasks
                     };

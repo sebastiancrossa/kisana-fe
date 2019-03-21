@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const LeaderboardItemCell = styled.div`
-    margin-bottom: 11px;
+    margin-bottom: 10px;
     background-color: #FFF;
     border-radius: 8px;
-    height: 45px;
+    height: 60px;
 `;
 
 const LeaderboardItems = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
+
+    padding-top: 5px;
 
     font-family: 'Open Sans', Arial;
     font-weight: 800;
@@ -20,7 +22,7 @@ const LeaderboardItems = styled.div`
     justify-items: center;
 `;
 
-class LeaderboardItem extends Component {
+class FirstLeaderboardItem extends Component {
 
     state = {
         image: '[]',
@@ -29,7 +31,6 @@ class LeaderboardItem extends Component {
     }
 
     render() {
-
         const { image, name, streak } = this.state;
 
         return (
@@ -45,4 +46,4 @@ class LeaderboardItem extends Component {
     }
 }
 
-export default LeaderboardItem;
+export default FirstLeaderboardItem
