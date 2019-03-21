@@ -11,7 +11,7 @@ const FeedView = styled.div`
 
 const Container = styled.div`
     width: 94%;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     max-width: 1100px;
 `;
 
@@ -48,7 +48,7 @@ class Feed extends Component {
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         }
                     ],
                     streak: '6'
@@ -58,11 +58,11 @@ class Feed extends Component {
                     tasks: [
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
@@ -80,11 +80,11 @@ class Feed extends Component {
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         }
                     ],
                     streak: '6'
@@ -94,15 +94,15 @@ class Feed extends Component {
                     tasks: [
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         }
                     ],
                     streak: '6'
@@ -112,7 +112,7 @@ class Feed extends Component {
                     tasks: [
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         },
                         {
                             title: 'Competitive programming',
@@ -120,7 +120,7 @@ class Feed extends Component {
                         },
                         {
                             title: 'Competitive programming',
-                            completed: false
+                            completed: true
                         }
                     ],
                     streak: '6'
