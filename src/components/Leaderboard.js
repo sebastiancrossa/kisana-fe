@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import LeaderboardItem from './LeaderboardItem';
 
 // Component imports
+import LeaderboardItem from './LeaderboardItem';
+import FirstLeaderboardItem from './FirstLeaderboardItem';
 
 const LeaderboardView = styled.div`
     margin-top: 20px;
@@ -34,6 +35,8 @@ class Leaderboard extends Component {
                     <Title>Leaderboard</Title>
 
                     <LeaderboardItems>
+                        <FirstLeaderboardItem />
+                        <LeaderboardItem />
                         <LeaderboardItem />
                         <LeaderboardItem />
                         <LeaderboardItem />

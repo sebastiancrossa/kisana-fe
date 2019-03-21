@@ -29,7 +29,6 @@ const FeedItems = styled.div`
 `;
 
 class Feed extends Component {
-
     constructor() {
         super();
 
@@ -132,7 +131,7 @@ class Feed extends Component {
     componentDidMount() {
         // Fetch users from API
         axios
-            .get("http://localhost:3300/user/5c93f867416d2e8df8875474")
+            .get("http://localhost:3300/users")
             .then(response => {
 
                 // Se crea un array de usuarios

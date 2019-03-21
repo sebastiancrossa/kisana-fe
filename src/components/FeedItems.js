@@ -103,7 +103,7 @@ class FeedItems extends Component {
     }
 
     render() {
-        const { feed } = this.state;
+        const { feed } = this.props;
 
         return (
             <div>

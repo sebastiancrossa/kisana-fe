@@ -28,12 +28,10 @@ const Container = styled.div`
 `;
 
 class App extends Component {
-  state = {
-    users: []
-  }
 
   componentDidMount() {
-    axios.post("http://localhost:3300/user", {
+    /*
+    axios.put("http://localhost:3300/user", {
       name: 'Sebastian Crossa',
       email: 'crossasebastian@gmail.com',
       tasks: [
@@ -47,9 +45,11 @@ class App extends Component {
     }).then(response => this.setState({
       users: [...this.state.users, response.data]
     }));
+    */
   }
 
   render() {
+
     return (
       <Router>
         <div className="App">

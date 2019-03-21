@@ -6,6 +6,7 @@ const Cell = styled.div`
     background-color: #FFF;
     border-radius: 8px;
     height: 190px;
+    
 
     padding: 0 20px 0 20px;
 `;
@@ -73,8 +74,6 @@ export class FeedItem extends Component {
                     </LayoutLeft>
 
                     <LayoutRight>
-                        <Title>What I'm working on today</Title>
-
                         <List>
                             {tasks.map(task => (
                                 <li style={task.done ? itemLineThrough : itemLineThroughNone}>{task.title}</li>
