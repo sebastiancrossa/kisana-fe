@@ -5,12 +5,14 @@ const LeaderboardItemCell = styled.div`
     margin-bottom: 11px;
     background-color: #FFF;
     border-radius: 8px;
-    height: 45px;
+    height: 55px;
 `;
 
 const LeaderboardItems = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
+
+    padding-top: 6px;
 
     font-family: 'Open Sans', Arial;
     font-weight: 800;
@@ -18,6 +20,7 @@ const LeaderboardItems = styled.div`
     color: #222B3E;
 
     justify-items: center;
+    align-items: center;
 `;
 
 const ItemName = styled.div`

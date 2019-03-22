@@ -38,8 +38,6 @@ class Leaderboard extends Component {
                         <FirstLeaderboardItem />
                         <LeaderboardItem />
                         <LeaderboardItem />
-                        <LeaderboardItem />
-                        <LeaderboardItem />
                     </LeaderboardItems>
                 </Container>
             </LeaderboardView>
