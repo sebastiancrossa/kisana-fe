@@ -6,13 +6,13 @@ const LeaderboardItemCell = styled.div`
     background-color: #FFF;
     border-radius: 8px;
     height: 60px;
+
+    transform: scale(1.08);
 `;
 
 const LeaderboardItems = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
-
-    padding-top: 5px;
 
     font-family: 'Open Sans', Arial;
     font-weight: 800;
@@ -20,6 +20,16 @@ const LeaderboardItems = styled.div`
     color: #222B3E;
 
     justify-items: center;
+    align-items: center;
+`;
+
+const Item = styled.div`
+    font-size: 15px;
+`;
+
+const Icon = styled.img`
+    width: 20px;
+    height: 25px;
 `;
 
 class FirstLeaderboardItem extends Component {
@@ -36,10 +46,10 @@ class FirstLeaderboardItem extends Component {
         return (
             <LeaderboardItemCell>
                 <LeaderboardItems>
-                    <h3>1st</h3>
-                    <h3>{image}</h3>
-                    <h3>{name}</h3>
-                    <p>🔥{streak}</p>
+                    <h3><Icon src={require('../gold.png')} alt="Gold medal" /></h3>
+                    <Item>{image}</Item>
+                    <Item>{name}</Item>
+                    <Item>🔥{streak}</Item>
                 </LeaderboardItems>
             </LeaderboardItemCell>
         )
