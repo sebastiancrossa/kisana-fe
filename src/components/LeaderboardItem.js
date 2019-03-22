@@ -20,6 +20,24 @@ const LeaderboardItems = styled.div`
     justify-items: center;
 `;
 
+const ItemName = styled.div`
+    font-family: 'Open Sans', Arial;
+    font-weight: 800;
+    font-size: 15px;
+    color: #222B3E;
+
+    margin-bottom: 5px;
+    align-self: center
+
+    display: block;
+    margin-top: 13px;
+`;
+
+const Icon = styled.img`
+    width: 20px;
+    height: 20px;
+`;
+
 class LeaderboardItem extends Component {
 
     state = {
@@ -35,10 +53,10 @@ class LeaderboardItem extends Component {
         return (
             <LeaderboardItemCell>
                 <LeaderboardItems>
-                    <h3>1st</h3>
-                    <h3>{image}</h3>
-                    <h3>{name}</h3>
-                    <p>🔥{streak}</p>
+                    <ItemName>2nd</ItemName>
+                    <ItemName>{image}</ItemName>
+                    <ItemName>{name}</ItemName>
+                    <ItemName>🔥{streak}</ItemName>
                 </LeaderboardItems>
             </LeaderboardItemCell>
         )
