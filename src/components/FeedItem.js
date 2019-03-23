@@ -7,14 +7,17 @@ const Cell = styled.div`
     border-radius: 8px;
     height: 190px;
 
-    padding: 0 15px 0 15px;
+    width: 340px;
 `;
 
 const Layout = styled.div`
     display: grid;
     grid-template-columns: repeat(2, auto);
 
+    max-width: 300px;
     padding-top: 15px;
+
+    margin: 0 auto;
 `;
 
 const LayoutLeft = styled.div`
@@ -40,6 +43,8 @@ const List = styled.ul`
     font-weight: 600;
     font-size: 13px;
     color: #222B3E;
+
+    padding-left: 30px;
 `;
 
 const ListItem = styled.p`

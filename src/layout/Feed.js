@@ -24,7 +24,7 @@ const Title = styled.h2`
 const FeedItems = styled.div`
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-gap: 30px;
+    grid-gap: 10px;
     grid-row-gap: 30px;
 `;
 
