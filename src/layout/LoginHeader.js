@@ -10,7 +10,7 @@ const Navbar = styled.nav`
 const Title = styled(Link)`
     font-family: 'Open Sans', Arial;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 25px;
     color: #222B3E;
 `;
 
