@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Component imports
-import LoginHeader from '../layout/LoginHeader'
+import LoginHeader from '../layout/LoginHeader';
+import RedBlobJS from '../components/RedBlob.js';
+import YellowBlob from '../components/YellowBlob';
+import BlueBlob from '../components/BlueBlob';
 
 const Body = styled.div`
     background-color: white;
@@ -12,6 +15,8 @@ const Body = styled.div`
 
     margin-bottom: -1500px;
     padding-bottom: 1500px;
+
+    overflow-x: hidden;
 `;
 
 const HeaderText = styled.div`
@@ -19,15 +24,17 @@ const HeaderText = styled.div`
 `;
 
 const Title = styled.h1`
-    font-family: 'Open Sans', Arial;
-    font-weight: 700;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 50px;
+
+    margin-bottom: 15px;
 `;
 
 const Description = styled.p`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 400;
     color: #333;
     font-size: 18px;
 `;
@@ -36,7 +43,9 @@ const Container = styled.div`
     align-items: center;
     width: 90%;
     max-width: 1100px;
-    margin: 90px auto 0 auto;
+    margin: 200px auto 0 auto;
+
+    z-index: 1000;
 `;
 
 const LoginButton = styled.button`
@@ -77,8 +86,8 @@ const ContentSection = styled.div`
 `;
 
 const ContentHeaderLeft = styled.h2`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 30px;
     line-height: 50px;
@@ -88,8 +97,8 @@ const ContentHeaderLeft = styled.h2`
 `;
 
 const ContentHeaderRight = styled.h2`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 30px;
     line-height: 50px;
@@ -110,6 +119,26 @@ const ContentImageLeft = styled.img`
     user-select: none;
 `;
 
+const CustomRedBlob = styled.div`
+    position: absolute;
+
+    left: -360px;
+`;
+
+const CustomYellowBlob = styled.div`
+    position: absolute;
+
+    top: 1000px;
+    right: -250px;
+`;
+
+const CustomBlueBlob = styled.div`
+    position: absolute;
+
+    top: 1600px;
+    left: -300px;
+`;
+
 const ContentImageRight = styled.img`
     width: 300px;
     height: 300px;
@@ -121,15 +150,39 @@ const ContentImageRight = styled.img`
     user-select: none;
 `;
 
+const Green = styled.span`
+    color: #00cc6f;
+`;
+
+const Red = styled.span`
+    color: #FB3640;
+`;
+
+const Yellow = styled.span`
+    color: #FFBC42;
+`;
+
 export class Login extends Component {
     render() {
         return (
             <Body>
                 <LoginHeader />
 
+                <CustomRedBlob>
+                    <RedBlobJS />
+                </CustomRedBlob>
+
+                <CustomYellowBlob>
+                    <YellowBlob />
+                </CustomYellowBlob>
+
+                <CustomBlueBlob>
+                    <BlueBlob />
+                </CustomBlueBlob>
+
                 <Container>
                     <HeaderText>
-                        <Title>Don't leave it for tomorrow</Title>
+                        <Title>Don't leave it for <Green>tomorrow</Green></Title>
                         <Description>Keep track of your tasks and compare your progress with others</Description>
                         <HeaderImage src={require('../app_lp.jpg')} alt="Main Kisana app UI" />
                     </HeaderText>
@@ -138,11 +191,11 @@ export class Login extends Component {
 
                         <ContentSection>
                             <ContentImageLeft src={require('../tasks_lp.png')} alt="App leaderboard" />
-                            <ContentHeaderRight>Add 5 tasks you want to accomplish each day</ContentHeaderRight>
+                            <ContentHeaderRight><Red>Add 5 tasks</Red> you want to accomplish each day</ContentHeaderRight>
                         </ContentSection>
 
                         <ContentSection>
-                            <ContentHeaderLeft>Stay accountable to your tasks and climb the leaderboard</ContentHeaderLeft>
+                            <ContentHeaderLeft><Yellow>Stay accountable</Yellow> to your tasks and climb the leaderboard</ContentHeaderLeft>
                             <ContentImageRight src={require('../leaderboard_lp.png')} alt="App leaderboard" />
                         </ContentSection>
 
