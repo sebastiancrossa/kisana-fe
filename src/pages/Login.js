@@ -36,7 +36,9 @@ const Container = styled.div`
     align-items: center;
     width: 90%;
     max-width: 1100px;
-    margin: 90px auto 0 auto;
+    margin: 200px auto 0 auto;
+
+    z-index: 1000;
 `;
 
 const LoginButton = styled.button`
@@ -121,6 +123,27 @@ const ContentImageRight = styled.img`
     user-select: none;
 `;
 
+const Blob1 = styled.img`
+    position: absolute;
+    top: 0;
+    right: 0;
+
+
+    z-index: 0;
+`;
+
+const Green = styled.span`
+    color: #00cc6f;
+`;
+
+const Red = styled.span`
+    color: #FB3640;
+`;
+
+const Yellow = styled.span`
+    color: #FFBC42;
+`;
+
 export class Login extends Component {
     render() {
         return (
@@ -129,7 +152,7 @@ export class Login extends Component {
 
                 <Container>
                     <HeaderText>
-                        <Title>Don't leave it for tomorrow</Title>
+                        <Title>Don't leave it for <Green>tomorrow</Green></Title>
                         <Description>Keep track of your tasks and compare your progress with others</Description>
                         <HeaderImage src={require('../app_lp.jpg')} alt="Main Kisana app UI" />
                     </HeaderText>
@@ -138,11 +161,11 @@ export class Login extends Component {
 
                         <ContentSection>
                             <ContentImageLeft src={require('../tasks_lp.png')} alt="App leaderboard" />
-                            <ContentHeaderRight>Add 5 tasks you want to accomplish each day</ContentHeaderRight>
+                            <ContentHeaderRight><Red>Add 5 tasks</Red> you want to accomplish each day</ContentHeaderRight>
                         </ContentSection>
 
                         <ContentSection>
-                            <ContentHeaderLeft>Stay accountable to your tasks and climb the leaderboard</ContentHeaderLeft>
+                            <ContentHeaderLeft><Yellow>Stay accountable</Yellow> to your tasks and climb the leaderboard</ContentHeaderLeft>
                             <ContentImageRight src={require('../leaderboard_lp.png')} alt="App leaderboard" />
                         </ContentSection>
 

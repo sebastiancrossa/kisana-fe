@@ -3,8 +3,18 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 const Navbar = styled.nav`
+    position: fixed;
+    overflow: hidden;
+
+    width: 100%;
+    
     background-color: #FFF;
     height: 65px;
+    border-bottom: 0.5px solid rgb(189, 189, 189);
+
+    padding-bottom: 20px;
+
+    z-index: 100;
 `;
 
 const Title = styled(Link)`
