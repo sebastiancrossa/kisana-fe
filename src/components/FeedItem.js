@@ -42,6 +42,11 @@ const List = styled.ul`
     color: #222B3E;
 `;
 
+const ListItem = styled.p`
+    margin-bottom: 5px;
+    margin-top: 0px;
+`;
+
 const FeedText = styled.p`
     font-family: 'Open Sans', Arial;
     font-weight: 600;
@@ -75,7 +80,7 @@ export class FeedItem extends Component {
                     <LayoutRight>
                         <List>
                             {tasks.map(task => (
-                                <li style={task.done ? itemLineThrough : itemLineThroughNone}>{task.title}</li>
+                                <ListItem style={task.done ? itemLineThrough : itemLineThroughNone}>{task.title}</ListItem>
                             ))}
                         </List>
                     </LayoutRight>

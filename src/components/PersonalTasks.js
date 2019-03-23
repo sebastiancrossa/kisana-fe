@@ -90,6 +90,23 @@ const TaskListItem = styled.li`
 
 const Check = styled.input`
     margin-right: 10px;
+    margin-botton: 5px;
+
+    ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+
+
+    &:checked {
+        background: #00cc6f;
+    }
 `;
 
 const Streak = styled.h1`
