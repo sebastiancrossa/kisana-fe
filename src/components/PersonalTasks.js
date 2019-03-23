@@ -85,11 +85,51 @@ const TaskList = styled.ul`
 `;
 
 const TaskListItem = styled.li`
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover button {
+        display: inline-block;
+    }
+`;
+
+const TaskListItemLeft = styled.div`
+
+`;
+
+const TaskListItemRight = styled.div`
+    
+`;
+
+const Delete = styled.button`
+    background: none;
+    color: #B4A6AB;
+    border: none;
+    height: 5px;
+
+    display: none;
 `;
 
 const Check = styled.input`
     margin-right: 10px;
+    margin-botton: 5px;
+
+    ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+
+
+    &:checked {
+        background: #00cc6f;
+    }
 `;
 
 const Streak = styled.h1`
@@ -100,7 +140,7 @@ const Streak = styled.h1`
 
     display: block;
     margin: 50px 0 50px 35px;
-    width: 50px;
+    width: 70px;
 `;
 
 const ModalText = styled.div`
@@ -133,7 +173,6 @@ const ModalInput = styled.input`
 
     width: 80%;
 
-    
     &::placeholder {
         color: #C0C3D2;
         font-size: 16px;
@@ -151,8 +190,6 @@ class PersonalTasks extends Component {
         task6: 'Start working on YC app',
         streak: '7'
     }
-
-
 
     showModal = () => {
         this.setState({ show: true });
@@ -190,29 +227,39 @@ class PersonalTasks extends Component {
 
                                 <TaskList>
                                     <TaskListItem>
-                                        <Check type="checkbox" /> {task1}
+                                        <TaskListItemLeft>
+                                            <Check type="checkbox" /> {task1} <Delete>x</Delete>
+                                        </TaskListItemLeft>
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <Check type="checkbox" /> {task2}
+                                        <TaskListItemLeft>
+                                            <Check type="checkbox" /> {task2} <Delete>x</Delete>
+                                        </TaskListItemLeft>
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <Check type="checkbox" /> {task3}
+                                        <TaskListItemLeft>
+                                            <Check type="checkbox" /> {task3} <Delete>x</Delete>
+                                        </TaskListItemLeft>
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <Check type="checkbox" /> {task4}
+                                        <TaskListItemLeft>
+                                            <Check type="checkbox" /> {task4} <Delete>x</Delete>
+                                        </TaskListItemLeft>
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <Check type="checkbox" /> {task5}
+                                        <TaskListItemLeft>
+                                            <Check type="checkbox" /> {task5} <Delete>x</Delete>
+                                        </TaskListItemLeft>
                                     </TaskListItem>
                                 </TaskList>
                             </TextRight>
 
                             <TextLeft>
-                                <Streak>🔥{streak}</Streak>
+                                <Streak>🔥 {streak}</Streak>
                             </TextLeft>
                         </TaskDisplay>
                     </Container>
