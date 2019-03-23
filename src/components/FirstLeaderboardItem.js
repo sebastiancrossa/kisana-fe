@@ -73,7 +73,6 @@ const Floral = styled.img`
 const Star = styled.img`
     position: absolute;
     overflow: hidden;
-    display: inline-block;
 
     width: 90px;
     bottom: -25px;

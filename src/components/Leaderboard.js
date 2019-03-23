@@ -7,11 +7,11 @@ import FirstLeaderboardItem from './FirstLeaderboardItem';
 
 const LeaderboardView = styled.div`
     margin-top: 20px;
-
+    max-width: auto;
 `;
 
 const Container = styled.div`
-    width: 90%;
+    width: 75%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 5px 0;

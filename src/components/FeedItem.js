@@ -6,9 +6,8 @@ const Cell = styled.div`
     background-color: #FFF;
     border-radius: 8px;
     height: 190px;
-    
 
-    padding: 0 20px 0 20px;
+    padding: 0 15px 0 15px;
 `;
 
 const Layout = styled.div`
