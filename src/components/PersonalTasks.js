@@ -28,9 +28,9 @@ const AddTask = styled.button`
 
     border: none;
     border-radius: 5px;
-    background-color: #00D77B;
+    background-color: #00cc6f;
 
-    box-shadow: 0px 0px 10px #00D77B;
+    box-shadow: 0px 0px 10px #00cc6f;
     font-family: 'Open Sans', Arial;
     font-weight: 600;
     font-size: 16px;
@@ -52,8 +52,8 @@ const TaskDisplay = styled.div`
 `;
 
 const TextRight = styled.div`
-    padding-top: 40px;
-    padding-left: 70px;
+    padding-top: 10px;
+    padding-left: 40px;
 `;
 
 const TextLeft = styled.div`
@@ -75,20 +75,21 @@ const HeaderLayout = styled.div`
 const TaskList = styled.ul`
     list-style: none;
 
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    columns: 2;
-
     font-family: 'Open Sans', Arial;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     color: #222B3E;
 
-    padding-left: 0px;
+    padding-top: 15px;
+    padding-left: 20px;
 `;
 
 const TaskListItem = styled.li`
     margin-bottom: 10px;
+`;
+
+const Check = styled.input`
+    margin-right: 10px;
 `;
 
 const Streak = styled.h1`
@@ -189,27 +190,23 @@ class PersonalTasks extends Component {
 
                                 <TaskList>
                                     <TaskListItem>
-                                        <input type="checkbox" /> {task1}
+                                        <Check type="checkbox" /> {task1}
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <input type="checkbox" /> {task2}
+                                        <Check type="checkbox" /> {task2}
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <input type="checkbox" /> {task3}
+                                        <Check type="checkbox" /> {task3}
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <input type="checkbox" /> {task4}
+                                        <Check type="checkbox" /> {task4}
                                     </TaskListItem>
 
                                     <TaskListItem>
-                                        <input type="checkbox" /> {task5}
-                                    </TaskListItem>
-
-                                    <TaskListItem>
-                                        <input type="checkbox" /> {task6}
+                                        <Check type="checkbox" /> {task5}
                                     </TaskListItem>
                                 </TaskList>
                             </TextRight>

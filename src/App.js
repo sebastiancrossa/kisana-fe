@@ -13,7 +13,7 @@ import Profile from './pages/Profile';
 
 const TopLayout = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 60% 40%;
 `;
 
 const BottomLayout = styled.div`

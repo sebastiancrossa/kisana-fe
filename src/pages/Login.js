@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Header = styled.h1`
-    font-family: 'Open Sans', Arial;
-    font-weight: 700;
-    color: #222B3E;
+// Component imports
+import LoginHeader from '../layout/LoginHeader'
 
+const Body = styled.div`
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+`;
+
+const HeaderText = styled.div`
     text-align: center;
 `;
 
+const Title = styled.h1`
+    font-family: 'Open Sans', Arial;
+    font-weight: 700;
+    color: #333;
+    font-size: 50px;
+`;
+
+const Description = styled.p`
+    font-family: 'Open Sans', Arial;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+`;
+
 const Container = styled.div`
-    width: 50%;
-
-    display: block;
-    margin: 100px auto;
-    padding: 50px;
-
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 90px auto 0 auto;
 `;
 
 const LoginButton = styled.button`
@@ -32,13 +50,16 @@ const LoginButton = styled.button`
 export class Login extends Component {
     render() {
         return (
-            <div>
-                <Container>
-                    <Header>Kisana Login</Header>
+            <Body>
+                <LoginHeader />
 
-                    <LoginButton>Sign in with Twitter</LoginButton>
+                <Container>
+                    <HeaderText>
+                        <Title>Don't leave it for tomorrow</Title>
+                        <Description>Keep track of your tasks and compare your progress with others</Description>
+                    </HeaderText>
                 </Container>
-            </div>
+            </Body>
         )
     }
 }

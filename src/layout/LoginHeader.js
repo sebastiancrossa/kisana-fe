@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Navbar = styled.nav`
     background-color: #FFF;
-    box-shadow: 0px -7px 50px rgba(119, 119, 119, 0.4);
     height: 65px;
 `;
 
 const Title = styled(Link)`
     font-family: 'Open Sans', Arial;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 23px;
     color: #222B3E;
 `;
 
@@ -26,7 +24,6 @@ const Container = styled.div`
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 5px 0;
 `;
 
 const NavbarUl = styled.ul`
@@ -43,25 +40,35 @@ const NavBarUlLi = styled(Link)`
     font-family: 'Open Sans', Arial;
     font-weight: 800;
     font-size: 15px;
-    color: #222B3E;
+    color: #333;
 `;
 
-const Header = (props) => {
-    const { branding } = props;
+const LoginButton = styled.button`
+    background-color: #00aced;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    color: white;
 
+    display: block;
+    margin: 0 auto;
+`;
+
+const LoginHeader = () => {
     return (
         <Navbar>
             <Container>
-                <Title to="/">{branding}</Title>
+                <Title to="/login">Kisana</Title>
                 <div>
                     <NavbarUl>
-                        <NavBarUlLi to="/">[]</NavBarUlLi>
-                        <NavBarUlLi to="/">Sebastian Crossa</NavBarUlLi>
+                        <NavBarUlLi>
+                            <LoginButton>Sign in with Twitter</LoginButton>
+                        </NavBarUlLi>
                     </NavbarUl>
                 </div>
             </Container>
         </Navbar>
-    );
+    )
 }
 
-export default Header;
+export default LoginHeader;
