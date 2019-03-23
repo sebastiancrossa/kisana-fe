@@ -30,7 +30,7 @@ const AddTask = styled.button`
     border-radius: 5px;
     background-color: #00cc6f;
 
-    box-shadow: 0px 0px 10px #00cc6f;
+    box-shadow: 0px 0px 10px rgba(0, 204, 111, 0.7);
     font-family: 'Open Sans', Arial;
     font-weight: 600;
     font-size: 16px;
@@ -182,12 +182,11 @@ const ModalInput = styled.input`
 class PersonalTasks extends Component {
     state = {
         show: false,
-        task1: 'Finish Kisana UI',
+        task1: 'Finish UI gig',
         task2: 'Validate product',
-        task3: 'Start working on YC app',
-        task4: 'Finish Kisana UI',
-        task5: 'Validate product',
-        task6: 'Start working on YC app',
+        task3: 'Start implementing auth',
+        task4: 'Study for tomorrows examn',
+        task5: 'Read 5 pages of book',
         streak: '7'
     }
 
