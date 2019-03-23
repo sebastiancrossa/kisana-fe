@@ -9,13 +9,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import Missing from './pages/Missing';
 
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component={App} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/user" component={Profile} />
+            <Switch>
+                <Route exact path="/" component={App} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/user" component={Profile} />
+                <Route component={Missing} />
+            </Switch>
         </div>
     </Router>
 )

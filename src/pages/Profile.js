@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// Component Imports
+import FollowsItem from '../components/FollowsItem';
+
 const UserInfo = styled.div`
     text-align: center;
     background-color: #fff;
@@ -11,6 +14,10 @@ const UserInfo = styled.div`
     display: grid;
     grid-template-columns: repeat(2, auto);
     margin: 0 auto;
+`;
+
+const Follows = styled.div`
+    margin-top: 50px;
 `;
 
 const Header = styled.h1`
@@ -36,7 +43,7 @@ const Container = styled.div`
 
     display: block;
     margin: 100px auto;
-    padding: 50px;
+    padding: 40px;
 `;
 
 const InfoLeft = styled.div`
@@ -53,6 +60,13 @@ const InfoTitle = styled.p`
 
 const InfoTasks = styled.p`
 
+`;
+
+const FollowsList = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    grid-gap: 20px;
 `;
 
 export class Profile extends Component {
@@ -77,14 +91,17 @@ export class Profile extends Component {
                     </UserInfo>
 
 
+                    <Follows>
+                        <SubHeader>Follows</SubHeader>
+                        <FollowsList>
+                            <FollowsItem />
+                            <FollowsItem />
+                            <FollowsItem />
+                            <FollowsItem />
+                            <FollowsItem />
+                        </FollowsList>
+                    </Follows>
 
-                    <SubHeader>Tasks:</SubHeader>
-                    <ul>
-                        <li>Finish up front</li>
-                        <li>Clean up code</li>
-                        <li>Read book</li>
-                        <li>Clean up room</li>
-                    </ul>
                 </Container>
             </div>
         )

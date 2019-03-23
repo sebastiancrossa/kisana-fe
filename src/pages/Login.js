@@ -43,7 +43,7 @@ const Container = styled.div`
     align-items: center;
     width: 90%;
     max-width: 1100px;
-    margin: 200px auto 0 auto;
+    margin: 190px auto 0 auto;
 
     z-index: 1000;
 `;
