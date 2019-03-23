@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Component imports
-import LoginHeader from '../layout/LoginHeader'
+import LoginHeader from '../layout/LoginHeader';
+import RedBlobJS from '../components/RedBlob.js';
+import YellowBlob from '../components/YellowBlob';
+import BlueBlob from '../components/BlueBlob';
 
 const Body = styled.div`
     background-color: white;
@@ -12,6 +15,8 @@ const Body = styled.div`
 
     margin-bottom: -1500px;
     padding-bottom: 1500px;
+
+    overflow-x: hidden;
 `;
 
 const HeaderText = styled.div`
@@ -19,15 +24,17 @@ const HeaderText = styled.div`
 `;
 
 const Title = styled.h1`
-    font-family: 'Open Sans', Arial;
-    font-weight: 700;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 50px;
+
+    margin-bottom: 15px;
 `;
 
 const Description = styled.p`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 400;
     color: #333;
     font-size: 18px;
 `;
@@ -79,8 +86,8 @@ const ContentSection = styled.div`
 `;
 
 const ContentHeaderLeft = styled.h2`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 30px;
     line-height: 50px;
@@ -90,8 +97,8 @@ const ContentHeaderLeft = styled.h2`
 `;
 
 const ContentHeaderRight = styled.h2`
-    font-family: 'Open Sans', Arial;
-    font-weight: 600;
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
     color: #333;
     font-size: 30px;
     line-height: 50px;
@@ -112,6 +119,26 @@ const ContentImageLeft = styled.img`
     user-select: none;
 `;
 
+const CustomRedBlob = styled.div`
+    position: absolute;
+
+    left: -360px;
+`;
+
+const CustomYellowBlob = styled.div`
+    position: absolute;
+
+    top: 1000px;
+    right: -250px;
+`;
+
+const CustomBlueBlob = styled.div`
+    position: absolute;
+
+    top: 1600px;
+    left: -300px;
+`;
+
 const ContentImageRight = styled.img`
     width: 300px;
     height: 300px;
@@ -121,15 +148,6 @@ const ContentImageRight = styled.img`
 
     pointer-events: none;
     user-select: none;
-`;
-
-const Blob1 = styled.img`
-    position: absolute;
-    top: 0;
-    right: 0;
-
-
-    z-index: 0;
 `;
 
 const Green = styled.span`
@@ -149,6 +167,18 @@ export class Login extends Component {
         return (
             <Body>
                 <LoginHeader />
+
+                <CustomRedBlob>
+                    <RedBlobJS />
+                </CustomRedBlob>
+
+                <CustomYellowBlob>
+                    <YellowBlob />
+                </CustomYellowBlob>
+
+                <CustomBlueBlob>
+                    <BlueBlob />
+                </CustomBlueBlob>
 
                 <Container>
                     <HeaderText>

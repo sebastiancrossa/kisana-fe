@@ -10,7 +10,7 @@ const Navbar = styled.nav`
     
     background-color: #FFF;
     height: 65px;
-    border-bottom: 0.5px solid rgb(189, 189, 189);
+    border-bottom: 1px solid rgb(189, 189, 189);
 
     padding-bottom: 20px;
 
