@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // Component imports
 import RedBlobJS from '../components/RedBlob.js';
+import RedBlob2 from '../components/RedBlob2';
 import YellowBlob from '../components/YellowBlob';
 import BlueBlob from '../components/BlueBlob';
 import PurpleBlob from '../components/PurpleBlob';
@@ -54,7 +55,7 @@ const Container = styled.div`
 `;
 
 const LoginButton = styled.button`
-    background-color: #00aced;
+    background-color: #00cc6f;
     padding: 13px 25px;
     border: none;
     border-radius: 5px;
@@ -66,7 +67,7 @@ const LoginButton = styled.button`
 
 const HeaderImage = styled.img`
     width: 800px;
-    height: 500px;
+    height: 550px;
 
     margin-top: 50px;
 
@@ -88,6 +89,12 @@ const ContentSection = styled.div`
     grid-gap: 100px;
 
     margin-bottom: 180px;
+`;
+
+const ContentSectionIrregular = styled.div`
+    display: block
+    margin: 0 auto 180px auto;
+    text-align: center;
 `;
 
 const ContentHeaderLeft = styled.h2`
@@ -112,6 +119,17 @@ const ContentHeaderRight = styled.h2`
     justify-self: start;
 `;
 
+const ContentHeaderCenter = styled.h2`
+    font-family: 'Rubik', Arial;
+    font-weight: 500;
+    color: #333;
+    font-size: 30px;
+    line-height: 50px;
+
+    width: 300px;
+    margin: 40px auto;
+`;
+
 const ContentImageLeft = styled.img`
     width: 450px;
     height: 300px;
@@ -124,10 +142,30 @@ const ContentImageLeft = styled.img`
     user-select: none;
 `;
 
+const ContentImageCenter = styled.img`
+    width: 850px;
+    height: 180px;
+
+    justify-self: end;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+
+    pointer-events: none;
+    user-select: none;
+`;
+
+
 const CustomRedBlob = styled.div`
     position: absolute;
 
     left: -360px;
+`;
+
+const CustomRedBlob2 = styled.div`
+    position: absolute;
+
+    right: -350px;
+    top: 2500px
 `;
 
 const CustomYellowBlob = styled.div`
@@ -163,7 +201,11 @@ const ContentImageRight = styled.img`
 `;
 
 const Green = styled.span`
+    /*
     color: #00cc6f;
+    */
+
+   color: #FFBC42;
 `;
 
 const Red = styled.span`
@@ -172,6 +214,19 @@ const Red = styled.span`
 
 const Yellow = styled.span`
     color: #FFBC42;
+`;
+
+const Purple = styled.span`
+    color: #8A1C7C;
+`;
+
+const KisanaTitle = styled.h1`
+    font-family: 'Open Sans', Arial;
+    font-weight: 800;
+    color: #333;
+    font-size: 60px;
+
+    margin-top: 25px;
 `;
 
 export class Login extends Component {
@@ -194,13 +249,18 @@ export class Login extends Component {
                     <PurpleBlob />
                 </CustomPurpleBlob>
 
+                <CustomRedBlob2>
+                    <RedBlob2 />
+                </CustomRedBlob2>
+
                 <Container>
                     <HeaderText>
                         <Logo src={require('../Logo@2x.png')} alt={'Kisana logo'} />
+                        <KisanaTitle>Kisana</KisanaTitle>
                         <Title>Don't leave it for <Green>tomorrow</Green></Title>
                         <Description>Keep track of your tasks and compare your progress with others</Description>
-                        <LoginButton>Sign in with Twitter</LoginButton>
-                        <HeaderImage src={require('../app_lp.jpg')} alt="Main Kisana app UI" />
+                        <LoginButton className="join-waitlist">Join our waitlist</LoginButton>
+                        <HeaderImage src={require('../app2_lp.png')} alt="Main Kisana app UI" />
                     </HeaderText>
 
                     <HeaderContent>
@@ -214,6 +274,11 @@ export class Login extends Component {
                             <ContentHeaderLeft><Yellow>Stay accountable</Yellow> to your tasks and climb the leaderboard</ContentHeaderLeft>
                             <ContentImageRight src={require('../leaderboard_lp.png')} alt="App leaderboard" />
                         </ContentSection>
+
+                        <ContentSectionIrregular>
+                            <ContentImageCenter src={require('../feed_lp.jpg')} alt="App feed" />
+                            <ContentHeaderCenter>See what your <Purple>Kisana buddies</Purple> are up to</ContentHeaderCenter>
+                        </ContentSectionIrregular>
 
                     </HeaderContent>
 
