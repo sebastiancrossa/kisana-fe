@@ -9,10 +9,10 @@ const Navbar = styled.nav`
     width: 100%;
     
     background-color: #FFF;
-    height: 65px;
+    height: 60px;
     border-bottom: 1px solid rgb(189, 189, 189);
 
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     z-index: 100;
 `;
@@ -29,6 +29,8 @@ const Container = styled.div`
 
     display: flex;
     justify-content: space-between;
+
+    height: 60px;
 
     align-items: center;
     width: 90%;
@@ -55,13 +57,13 @@ const NavBarUlLi = styled(Link)`
 
 const LoginButton = styled.button`
     background-color: #00aced;
-    padding: 15px 25px;
+    padding: 13px 25px;
     border: none;
     border-radius: 5px;
     color: white;
 
     display: block;
-    margin: 0 auto;
+    margin: 5px auto 0 auto;
 `;
 
 const LoginHeader = () => {
