@@ -62,12 +62,28 @@ const InfoTasks = styled.p`
 
 `;
 
+const FollowButton = styled.button`
+    background-color: #00CC6F;
+    color: white;
+
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+
+    margin-top: 20px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+`;
+
 const FollowsList = styled.div`
     display: grid;
     grid-template-columns: repeat(3, auto);
 
     grid-gap: 20px;
 `;
+
+
 
 export class Profile extends Component {
     render() {
@@ -90,6 +106,7 @@ export class Profile extends Component {
                         </InfoRight>
                     </UserInfo>
 
+                    <FollowButton>Follow</FollowButton>
 
                     <Follows>
                         <SubHeader>Follows</SubHeader>

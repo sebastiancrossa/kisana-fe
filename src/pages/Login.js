@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Component imports
-import LoginHeader from '../layout/LoginHeader';
 import RedBlobJS from '../components/RedBlob.js';
 import YellowBlob from '../components/YellowBlob';
 import BlueBlob from '../components/BlueBlob';
+import PurpleBlob from '../components/PurpleBlob';
 
 const Body = styled.div`
     background-color: white;
@@ -17,6 +17,11 @@ const Body = styled.div`
     padding-bottom: 1500px;
 
     overflow-x: hidden;
+`;
+
+const Logo = styled.img`
+    width: 100px;
+    height: 100px;
 `;
 
 const HeaderText = styled.div`
@@ -43,20 +48,20 @@ const Container = styled.div`
     align-items: center;
     width: 90%;
     max-width: 1100px;
-    margin: 190px auto 0 auto;
+    margin: 100px auto 0 auto;
 
     z-index: 1000;
 `;
 
 const LoginButton = styled.button`
     background-color: #00aced;
-    padding: 10px 40px;
+    padding: 13px 25px;
     border: none;
     border-radius: 5px;
     color: white;
 
     display: block;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
 `;
 
 const HeaderImage = styled.img`
@@ -139,6 +144,13 @@ const CustomBlueBlob = styled.div`
     left: -300px;
 `;
 
+const CustomPurpleBlob = styled.div`
+    position: absolute;
+
+    top: -370px;
+    right: -220px;
+`;
+
 const ContentImageRight = styled.img`
     width: 300px;
     height: 300px;
@@ -166,8 +178,6 @@ export class Login extends Component {
     render() {
         return (
             <Body>
-                <LoginHeader />
-
                 <CustomRedBlob>
                     <RedBlobJS />
                 </CustomRedBlob>
@@ -180,10 +190,16 @@ export class Login extends Component {
                     <BlueBlob />
                 </CustomBlueBlob>
 
+                <CustomPurpleBlob>
+                    <PurpleBlob />
+                </CustomPurpleBlob>
+
                 <Container>
                     <HeaderText>
+                        <Logo src={require('../Logo@2x.png')} alt={'Kisana logo'} />
                         <Title>Don't leave it for <Green>tomorrow</Green></Title>
                         <Description>Keep track of your tasks and compare your progress with others</Description>
+                        <LoginButton>Sign in with Twitter</LoginButton>
                         <HeaderImage src={require('../app_lp.jpg')} alt="Main Kisana app UI" />
                     </HeaderText>
 
