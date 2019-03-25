@@ -23,10 +23,16 @@ const Body = styled.div`
 const Logo = styled.img`
     width: 100px;
     height: 100px;
+
+    @media (max-width: 480px) {
+        width: 80px;
+        height: 80px;
+    }
 `;
 
 const HeaderText = styled.div`
     text-align: center;
+    z-index: 100;
 `;
 
 const Title = styled.h1`
@@ -36,6 +42,10 @@ const Title = styled.h1`
     font-size: 50px;
 
     margin-bottom: 15px;
+
+    @media (max-width: 480px) {
+        font-size: 30px;
+    }
 `;
 
 const Description = styled.p`
@@ -43,6 +53,21 @@ const Description = styled.p`
     font-weight: 400;
     color: #333;
     font-size: 18px;
+
+    @media (max-width: 716px) {
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 15px;
+        width: 350px;
+    }
+
+    @media (max-width: 320px) {
+        width: 240px;
+    }
 `;
 
 const Container = styled.div`
@@ -63,6 +88,15 @@ const LoginButton = styled.button`
 
     display: block;
     margin: 40px auto 0 auto;
+
+    &:hover {
+        transform: scale(1.005); 
+        -webkit-box-shadow: 2px 8px 60px -15px rgba(0,0,0,0.51);
+        -moz-box-shadow: 2px 8px 60px -15px rgba(0,0,0,0.51);
+        box-shadow: 2px 8px 60px -15px rgba(0,0,0,0.51);
+        transition: all .2s ease-in-out;
+    
+    }
 `;
 
 const HeaderImage = styled.img`
@@ -76,6 +110,31 @@ const HeaderImage = styled.img`
 
     pointer-events: none;
     user-select: none;
+
+    @media (max-width: 850px) {
+        width: 600px;
+        height: 450px;
+    }
+
+    @media (max-width: 640px) {
+        width: 500px;
+        height: 400px;
+    }
+
+    @media (max-width: 540px) {
+        width: 450px;
+        height: 350px;
+    }
+
+    @media (max-width: 480px) {
+        width: 400px;
+        height: 300px;
+    }
+
+    @media (max-width: 440px) {
+        width: 90%;
+        height: 70%;
+    }
 `;
 
 const HeaderContent = styled.div`
@@ -89,12 +148,36 @@ const ContentSection = styled.div`
     grid-gap: 100px;
 
     margin-bottom: 180px;
+
+    @media (max-width: 850px) {
+        grid-template-columns: repeat(1, auto);
+        grid-gap: 30px;
+        text-align: center;
+    }
+
+    @media (max-width: 440px) {
+        margin-bottom: 100px;
+    }
 `;
 
 const ContentSectionIrregular = styled.div`
     display: block
     margin: 0 auto 180px auto;
     text-align: center;
+
+    @media (max-width: 850px) {
+        grid-template-columns: repeat(1, auto);
+        rid-gap: 30px;
+        text-align: center;
+    }
+
+    @media (max-width: 440px) {
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: 320px) {
+        margin-top: 200px;
+    }
 `;
 
 const ContentHeaderLeft = styled.h2`
@@ -106,6 +189,15 @@ const ContentHeaderLeft = styled.h2`
 
     width: 300px;
     justify-self: end;
+
+    @media (max-width: 850px) {
+        justify-self: center;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 25px;
+        width: 250px;
+    }
 `;
 
 const ContentHeaderRight = styled.h2`
@@ -117,6 +209,15 @@ const ContentHeaderRight = styled.h2`
 
     width: 300px;
     justify-self: start;
+
+    @media (max-width: 850px) {
+        justify-self: center;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 25px;
+        width: 250px;
+    }
 `;
 
 const ContentHeaderCenter = styled.h2`
@@ -128,6 +229,11 @@ const ContentHeaderCenter = styled.h2`
 
     width: 300px;
     margin: 40px auto;
+
+    @media (max-width: 320px) {
+        font-size: 25px;
+        width: 250px;
+    }
 `;
 
 const ContentImageLeft = styled.img`
@@ -140,6 +246,25 @@ const ContentImageLeft = styled.img`
 
     pointer-events: none;
     user-select: none;
+
+    @media (max-width: 850px) {
+        justify-self: center;
+    }
+
+    @media (max-width: 500px) {
+        width: 360px;
+        height: 220px;
+    }
+
+    @media (max-width: 440px) {
+        width: 320px;
+        height: 210px;
+    }
+
+    @media (max-width: 360px) {
+        width: 260px;
+        height: 170px;
+    }
 `;
 
 const ContentImageCenter = styled.img`
@@ -152,6 +277,36 @@ const ContentImageCenter = styled.img`
 
     pointer-events: none;
     user-select: none;
+
+    @media (max-width: 960px) {
+        width: 750px;
+        height: 155px;
+    }
+
+    @media (max-width: 800px) {
+        width: 650px;
+        height: 155px;
+    }
+
+    @media (max-width: 700px) {
+        width: 550px;
+        height: 130px;
+    }
+
+    @media (max-width: 595px) {
+        width: 480px;
+        height: 110px;
+    }
+
+    @media (max-width: 500px) {
+        width: 400px;
+        height: 100px;
+    }
+
+    @media (max-width: 440px) {
+        width: 95%;
+        height: 75%;
+    }
 `;
 
 
@@ -159,6 +314,15 @@ const CustomRedBlob = styled.div`
     position: absolute;
 
     left: -360px;
+
+    @media (max-width: 960px) {
+        left: -460px;
+    }
+
+    @media (max-width: 740px) {
+        left: -500px;
+    }
+    
 `;
 
 const CustomRedBlob2 = styled.div`
@@ -166,6 +330,10 @@ const CustomRedBlob2 = styled.div`
 
     right: -350px;
     top: 2500px
+
+    @media (max-width: 850px) {
+        right: -580px;
+    }
 `;
 
 const CustomYellowBlob = styled.div`
@@ -173,6 +341,10 @@ const CustomYellowBlob = styled.div`
 
     top: 1000px;
     right: -250px;
+
+    @media (max-width: 960px) {
+        right: -390px;
+    }
 `;
 
 const CustomBlueBlob = styled.div`
@@ -180,6 +352,18 @@ const CustomBlueBlob = styled.div`
 
     top: 1600px;
     left: -300px;
+
+    @media (max-width: 960px) {
+        left: -350px;
+    }
+
+    @media (max-width: 480px) {
+        left: -390px;
+    }
+
+    @media (max-width: 340px) {
+        left: -410px;
+    }
 `;
 
 const CustomPurpleBlob = styled.div`
@@ -187,6 +371,10 @@ const CustomPurpleBlob = styled.div`
 
     top: -370px;
     right: -220px;
+
+    @media (max-width: 570px) {
+        right: -300px;
+    }
 `;
 
 const ContentImageRight = styled.img`
@@ -198,6 +386,17 @@ const ContentImageRight = styled.img`
 
     pointer-events: none;
     user-select: none;
+
+    @media (max-width: 850px) {
+        justify-self: center;
+    }
+
+    @media (max-width: 500px) {
+        width: 250px;
+        height: 250px;
+    }
+
+    
 `;
 
 const Green = styled.span`
@@ -227,6 +426,10 @@ const KisanaTitle = styled.h1`
     font-size: 60px;
 
     margin-top: 25px;
+
+    @media (max-width: 480px) {
+        font-size: 40px;
+    }
 `;
 
 export class Login extends Component {
