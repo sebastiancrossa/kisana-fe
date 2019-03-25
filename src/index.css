@@ -1,3 +1,7 @@
+html {
+  overflow-x: initial !important;
+}
+
 body {
   background-color: #EEF0F8;
   margin: 0;
