@@ -1,6 +1,4 @@
-html {
-  overflow-x: initial !important;
-}
+html { overflow-y: scroll; }
 
 body {
   background-color: #EEF0F8;

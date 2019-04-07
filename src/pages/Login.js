@@ -86,6 +86,8 @@ const LoginButton = styled.button`
     border-radius: 5px;
     color: white;
 
+    font-family: 'Open Sans', Arial; 
+
     display: block;
     margin: 40px auto 0 auto;
 
