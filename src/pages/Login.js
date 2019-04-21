@@ -331,7 +331,8 @@ const CustomRedBlob2 = styled.div`
   position: absolute;
 
   right: -350px;
-  top: 2500px @media (max-width: 850px) {
+  top: 2500px;
+  @media (max-width: 850px) {
     right: -580px;
   }
 `;

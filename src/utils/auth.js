@@ -14,6 +14,29 @@ class Auth {
   login = () => {
     this.auth0.authorize();
   };
+
+  handleAuth = () => {
+    this.auth0.parseHash((err, authRes) => {
+      if (authRes) {
+        localStorage.setItem('access_token', authRes.accessToken);
+        localStorage.setItem('id_token', authRes.idToken);
+
+        let expiresAt = JSON.stringify(
+          authRes.expiresIn * 1000 + new Date().getTime()
+        );
+
+        localStorage.setItem('expiresAt', expiresAt);
+      } else {
+        console.log(err);
+      }
+    });
+  };
+
+  handleLogout = () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('expiresAt');
+  };
 }
 
 export default Auth;
